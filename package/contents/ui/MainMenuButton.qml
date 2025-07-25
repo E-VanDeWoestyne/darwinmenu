@@ -196,6 +196,7 @@ AbstractButton {
 
         QtLabs.MenuItem {
             id: appStoreMenuItem
+            visible: menuButton.appStoreCommand !== ""
             text: i18n("App Store...")
             onTriggered: {
                 logic.openExec(menuButton.appStoreCommand)

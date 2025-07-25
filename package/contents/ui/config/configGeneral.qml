@@ -23,6 +23,7 @@ KCM.SimpleKCM {
 
     property bool cfg_shortcutOpensPlasmoid: Plasmoid.configuration.shortcutOpensPlasmoid
     property bool cfg_aboutThisPCUseCommand: Plasmoid.configuration.aboutThisPCUseCommand
+    property bool cfg_showAppStoreButton: Plasmoid.configuration.showAppStoreButton ?? true
 
     property alias cfg_aboutThisPCCommand: aboutThisPCCommand.text
     property alias cfg_appStoreCommand: appStoreCommand.text
@@ -355,7 +356,7 @@ KCM.SimpleKCM {
 
         Kirigami.ActionTextField {
             id: appStoreCommand
-            Kirigami.FormData.label: i18n("App Store command")
+            Kirigami.FormData.label: i18n("App Store command (leave blank to disable)")
             text: Plasmoid.configuration.appStoreCommand ?? ""
             placeholderText: i18n("Type here to override command")
             onTextEdited: {
